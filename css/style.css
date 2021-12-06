@@ -5,6 +5,12 @@
     line-height: 1.5;
 }
 
+nav {
+    width: 100%;
+    height: 10rem;
+    background-color: tomato;
+}
+
 .main-wrapper {
     width: 100%;    
 }
@@ -45,6 +51,16 @@
     width: 100%;
     height: 50vh;
     background-color: teal;
+}
+
+#card-container {
+    background-color:yellowgreen;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    width: 100%;
+    display: grid;    
+    grid-template-columns: auto auto;    
 }
 
 .contact-section {
