@@ -1,10 +1,10 @@
 // Array med staff members
 let staff = [
     {
-    name: "Herko Nilsson",
-    title: "Head of HR",
-    info: "likes dinosaurs and pasta",
-    image: "herko.jpg"
+    name: "Da-Neil Svensson",
+    title: "Worst at videogames but played most fighting games",
+    info: "likes to not have time to sleep",
+    image: "img07.jpg.PNG"
     },
     {
     name: "Göran Persson",
@@ -25,10 +25,46 @@ let staff = [
         image:"swain.jpg"
     }
 ]
-
-    // Loopa igenom staff och befolka och lägg in staff kort.
-    // TODO refaktor detta
-    const cardElements = staff.
+const images = [
+    {
+        filename:"img01.jpg" ,
+        alt:"Todo image alt text",
+        description:"TODO Desctiption" 
+    },
+    {
+        filename:"img02.jpg" ,
+        alt:"Todo image alt text",
+        description:"TODO Desctiption" 
+    },
+    {
+        filename:"img03.jpg" ,
+        alt:"Todo image alt text",
+        description:"TODO Desctiption" 
+    },
+    {
+        filename:"img04.jpg" ,
+        alt:"Todo image alt text",
+        description:"TODO Desctiption" 
+    },
+    {
+        filename:"img05.jpg" ,
+        alt:"Todo image alt text",
+        description:"TODO Desctiption" 
+    },
+    {
+        filename:"img06.jpg" ,
+        alt:"Todo image alt text",
+        description:"TODO Desctiption" 
+    },
+    {
+        filename:"img07.jpg.PNG" ,
+        alt:"BILD PÅ DA-NEIL",
+        description:"Supreme old man DA-NEIL" 
+    }
+]
+// Loopa igenom staff och befolka och lägg in staff kort.
+// TODO refaktor detta
+const cardElements = staff.
 map(
     (staff, index) => 
     `<div class="card" onclick="openModal(${index})"><h2>${staff.name}</h2></div>`
@@ -49,6 +85,36 @@ const openModal = (index) => {
     ;
     document.querySelector("#modal-wrapper").style.display = "flex";
 }
+
+console.log(images[0].filename);
+
+setInterval(showSlides(images), 7000);
+
+let picureNames = ["image1", "image3.jpg"];
+
+function showSlides(images){
+    let imageMain = document.querySelector("#image-main");
+    let counter = 0;
+    setTimeout((images) => {
+        imageMain.setAttribute("src",`./media/img/${images[counter].filename}`);
+        counter++;
+    }, 1000);
+};
+
+/*function showSlides(){
+    setInterval(() =>
+        {
+           for(let img in images) {
+            console.log(images[img].filename);
+            setTimeout(() => {
+                document.querySelector("#image-main").setAttribute("src",`./media/img/${images[img].filename}`)
+            }, 2000);
+           }},14000);
+};*/
+
+window.onload = (event) => {
+    console.log('page is fully loaded');};
+    showSlides();
 
 let onSubmit = () => {
 
