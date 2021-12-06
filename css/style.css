@@ -5,13 +5,18 @@
     line-height: 1.5;
 }
 
-main-wrapper {
-    display: grid;
-    grid-auto-flow: row;
-    gap: 20px;
+#service-container {
+    margin: 25px;
+    width: 100%;
+    display: grid;    
+    grid-template-columns: auto auto;
 }
 
-service-boxes {
+.service-boxes {
+    height: 300px;
+    width: 80%;
+    margin: 20px;
+    background-color: aqua;
     padding: 5px;
     text-align: justify;
 }
