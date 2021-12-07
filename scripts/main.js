@@ -62,6 +62,19 @@ const images = [
         description:"Supreme old man DA-NEIL" 
     }
 ]
+
+const navMenu = () => {
+    let menu = document.querySelector("#menu-links");
+    let burgerIcon = document.querySelector("#iconstyle");    
+    if (menu.style.display === "grid") {
+        burgerIcon.setAttribute("class", "fa fa-bars")
+        menu.style.display = "none";
+    } else {
+        burgerIcon.setAttribute("class", "fa fa-times")
+        menu.style.display = "grid";
+    }
+}
+
 // Loopa igenom staff och befolka och lägg in staff kort.
 // TODO refaktor detta
 const cardElements = staff.

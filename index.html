@@ -10,12 +10,26 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div id="arvids-supreme-menu">
-
+        <nav>            
+            <h1>SUPERDevs Unite!</h1>
+            <!--Dropdown menu-->
+            <div class="nav-button">
+                <a href="javascript:void(0);" id="burger" onclick="navMenu()">
+                    <i id="iconstyle" class="fa fa-bars"></i>
+                </a>
+                <div id="menu-links">
+                    <div class="name-logo">SuperDevs</div>
+                    <a href="#">HOME</a>
+                    <a href="#service-container">SERVICES</a>
+                    <a href="#portfolio-section">PORTFOLIO</a>
+                    <a href="#about-section">ABOUT</a>
+                    <a href="#contact-section">CONTACT</a>                
+                </div>
             </div>
+            
+            
         </nav>        
-        <!--- slick dropdown menu --->
+                
     </header>
     <div class="main-wrapper">
         <div class="hero-section">
@@ -41,20 +55,20 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus facere sapiente fuga, animi quibusdam explicabo velit totam accusantium tenetur, quo sint rem modi praesentium id soluta dolore quas, provident laudantium?</p>
             </div>
         </div>       
-        <div class="portfolio-section">
+        <div id="portfolio-section">
             <div id="image-gallery">
                 <img src="./media/img/img05.jpg" id="image-main"onclick="openLightbox()">
                 <!--Image gallery slideshow med thumbnails-->
             </div>
         </div>
-        <div class="about-section">
+        <div id="about-section">
             <div id="card-container">
                 <!--- add cards via JavaScript-->
             </div>
         </div>
     </div>
     <footer>
-        <div class="contact-section">
+        <div id="contact-section">
             <div id="contact-adress-container">
 
             </div>
