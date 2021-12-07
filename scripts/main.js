@@ -86,19 +86,19 @@ const openModal = (index) => {
     document.querySelector("#modal-wrapper").style.display = "flex";
 }
 
-console.log(images[0].filename);
+let counter = 0;
 
-setInterval(showSlides(images), 7000);
+setInterval(showSlides, 2000);
 
-let picureNames = ["image1", "image3.jpg"];
-
-function showSlides(images){
+function showSlides(){
     let imageMain = document.querySelector("#image-main");
-    let counter = 0;
-    setTimeout((images) => {
-        imageMain.setAttribute("src",`./media/img/${images[counter].filename}`);
+    setTimeout(() => {
+        imageMain.setAttribute("src", `./media/img/${images[counter].filename}`);
         counter++;
-    }, 1000);
+    }, 2000);
+    if (counter === images.length) {
+      counter = 0;
+    }
 };
 
 /*function showSlides(){
