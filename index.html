@@ -70,13 +70,16 @@
 
             </div>
             <div id="contact-form-container">
-                <form> 
-                   <input type="email"  placeholder="Din e-post tack"name="" id="" required>   
-                    <input type="text" placeholder="Ditt namn" name="" id="" required>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Ditt meddelande tack" required></textarea>
+                <form id="contact-form" name="contact-form-name"> 
+                   <input type="email"  placeholder="Din e-post tack" name="e-name" class="formcheck" required>   
+                    <input type="text" placeholder="Ditt namn" name="" class="formcheck" required>
+                    <textarea name="" class="formcheck" cols="30" rows="10" placeholder="Ditt meddelande tack" required></textarea>
                     <button type="submit" onclick="onSubmit()">Submit</button>
                 </form>
             </div>
+            <div id="loading-container">
+                <div class="loading"></div>
+            </div>            
         </div>
     </footer>
 </body>

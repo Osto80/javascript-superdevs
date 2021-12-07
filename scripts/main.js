@@ -124,6 +124,35 @@ function showSlides(){
             }, 2000);
            }},14000);
 };*/
+// Ladda ikon dyker upp och rensar form fälten efter 3 sek
+const onSubmit = () => {
+    const formcheck = document.querySelectorAll(".formcheck");
+    console.log(formcheck);
+    if (validateForm() == 'true' ) {
+        document.querySelector("#loading-container").style.display = "flex"
+    setTimeout(() => {
+        document.querySelector("#contact-form").reset();
+        document.querySelector("#loading-container")
+        .innerHTML = '<h2>TACK FÖR DITT BIDRAG!</h2><br><a href="javascript:closeLoadingBox();">[Stäng denna rutan]</a>'
+    } , 3000 );
+    }
+}
+
+const closeLoadingBox = () => {
+    document.querySelector("#loading-container").style.display = "none"
+    document.querySelector("#loading-container").innerHTML = '<div class="loading"></div>'
+}
+
+const validateForm = () => {
+    const test = document.forms["contact-form-name"]["e-name"].value;
+    if (test == "") {
+        alert('Du måste fylla i alla fält!');
+    }
+    //TODO Fixa samtliga fälts validering
+    //TODO FIXA Denna skiten! Den funkar inte med valideringen!!
+}
+
+
 
 window.onload = (event) => {
     console.log('page is fully loaded');
