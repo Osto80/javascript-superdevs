@@ -88,7 +88,7 @@ const openModal = (index) => {
 
 let counter = 0;
 
-setInterval(showSlides, 2000);
+
 
 function showSlides(){
     let imageMain = document.querySelector("#image-main");
@@ -114,5 +114,6 @@ function showSlides(){
 
 window.onload = (event) => {
     console.log('page is fully loaded');
+    setInterval(showSlides, 2000);
 };
     
