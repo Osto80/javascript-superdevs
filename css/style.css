@@ -79,6 +79,7 @@ nav {
 }
 
 #image-main {
-    width: 20rem;
-    
+    display: grid;
+    width: 100%;
+    height: 50vh;       
 }

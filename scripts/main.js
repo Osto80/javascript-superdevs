@@ -95,7 +95,7 @@ function showSlides(){
     setTimeout(() => {
         imageMain.setAttribute("src", `./media/img/${images[counter].filename}`);
         counter++;
-    }, 2000);
+    }, 3000);
     if (counter === images.length) {
       counter = 0;
     }
@@ -113,10 +113,6 @@ function showSlides(){
 };*/
 
 window.onload = (event) => {
-    console.log('page is fully loaded');};
-    showSlides();
-
-let onSubmit = () => {
-
-    alert("alert")
-}
+    console.log('page is fully loaded');
+};
+    
