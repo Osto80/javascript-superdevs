@@ -217,13 +217,16 @@ a:hover {
     padding: 1rem;
     border-radius: 1rem;
     box-shadow: 5px 5px 8px rgba(46, 46, 46, 0.5);
+    transition: 150ms ease-in-out;
 }
 
 #card-modal-content:hover {
-    transform: rotate3d(-1, 1, 0.5, 5deg);    
-    box-shadow: 5px 12px 8px rgba(46, 46, 46, 0.6);
-    transition-duration: 500ms;
+    transform: rotate3d(1, -1, 0.1, 5deg);    
+    box-shadow: 5px 10px 8px rgba(46, 46, 46, 0.6);
+    transition: 250ms ease-in-out;
 }
+
+
 
 #contact-section {
     width: 100%;
