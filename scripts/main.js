@@ -127,15 +127,12 @@ function showSlides(){
 // Ladda ikon dyker upp och rensar form fälten efter 3 sek
 const onSubmit = () => {
     const formcheck = document.querySelectorAll(".formcheck");
-    console.log(formcheck);
-    if (validateForm() == 'true' ) {
         document.querySelector("#loading-container").style.display = "flex"
     setTimeout(() => {
         document.querySelector("#contact-form").reset();
         document.querySelector("#loading-container")
         .innerHTML = '<h2>TACK FÖR DITT BIDRAG!</h2><br><a href="javascript:closeLoadingBox();">[Stäng denna rutan]</a>'
     } , 3000 );
-    }
 }
 
 const closeLoadingBox = () => {
@@ -143,13 +140,15 @@ const closeLoadingBox = () => {
     document.querySelector("#loading-container").innerHTML = '<div class="loading"></div>'
 }
 
-const validateForm = () => {
-    const test = document.forms["contact-form-name"]["e-name"].value;
-    if (test == "") {
-        alert('Du måste fylla i alla fält!');
+const validateEmail = () => {
+    const test = document.forms["contact-form-name"]['input1'].value; 
+    if (test === "") {
+        alert('Du måste fylla i din e-postadress!');
+        return false;
+    }else{
+        console.log("här blev det sant");
+        return true;
     }
-    //TODO Fixa samtliga fälts validering
-    //TODO FIXA Denna skiten! Den funkar inte med valideringen!!
 }
 
 
