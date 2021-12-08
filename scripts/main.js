@@ -81,15 +81,13 @@ const navMenu = () => {
 const cardElements = staff.
 map(
     (staff, index) => 
-    `<div class="card" style="background-image:url(./media/img/staff/${staff.image})" onclick="openModal(${index})"><h2>${staff.name}</h2></div>`
+    `<div class="card" style="background-image:url(./media/img/staff/${staff.image})" onclick="openCardModal(${index})"><h2>${staff.name}</h2></div>`
     )
 .join("");
 
 document.querySelector('#card-container').innerHTML = cardElements;
 
-
-
-const openModal = (index) => {
+const openCardModal = (index) => {
     document.querySelector("#card-modal-content").innerHTML = 
     `<div class="card-modal-header">
         <a onclick="closeModal()">x (close)</a>
@@ -124,7 +122,7 @@ function showSlides(){
 // Ladda ikon dyker upp och rensar form fälten efter 3 sek
 // Kollar med en REGEX att epost har rätt format, och om allt stämmer, körs fake laddningen
 const onSubmit = () => {
-    const formcheck = document.querySelectorAll(".formcheck");
+    // Unused --- const formcheck = document.querySelectorAll(".formcheck");
         document.querySelector("#loading-container").style.display = "flex"
     setTimeout(() => {
         document.querySelector("#contact-form").reset();
@@ -139,6 +137,7 @@ const closeLoadingBox = () => {
 }
 
 const validateEmail = () => {
+    // alternativ ---- const test2 = document.querySelector('contact-form').value;
     const test = document.forms["contact-form-name"]['input1'].value;    
     if (!validateEmailPattern(test)) {
         alert('Du har inte fyllt i en giltig epost-adress!');
