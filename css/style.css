@@ -15,8 +15,13 @@ nav {
     width: 100%;    
     width: 100%;
     height: 4rem;
-    background-color: tomato;
+    background-color: rgb(20, 32, 46);
     z-index: 10;
+}
+
+nav h1 {
+    padding: 1rem;
+    color: white;
 }
 
 .nav-button {
@@ -32,7 +37,7 @@ nav {
     align-items: center;
     width: 4rem;
     height: 4rem;
-    background-color: orangered;    
+    background-color: rgb(36, 53, 71);    
 }
 
 nav #menu-links {    
@@ -43,7 +48,7 @@ nav #menu-links {
     width: 10rem;
     height: 20rem;
     grid-template-columns: auto;
-    background-color: white;
+    background-color: rgb(138, 161, 187);
     justify-content: center;
     align-items: center;
     padding: 2rem;
@@ -57,7 +62,7 @@ a {
 }
 
 a:hover {
-    color: orange;
+    color: rgb(255, 209, 123);
     cursor: pointer;
 }
 
@@ -101,7 +106,7 @@ a:hover {
 }
 
 #service-container {    
-    background-color: blueviolet;
+    background-color: rgb(36, 53, 71);
     justify-content: center;
     align-items: center;
     margin: 0px;
@@ -115,20 +120,59 @@ a:hover {
     border-radius: 1rem;
     height: 300px;
     width: 20rem;
-    margin: 2rem;
-    background-color: aqua;
+    margin: 2rem;    
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: justify;
     position: relative;
     color: white;
     background-blend-mode:multiply;    
     text-shadow: 0px 5px 12px rgba(0, 0, 0, 1);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition-duration: 150ms;
+}
+
+.service-boxes h2 {
+    border-bottom: 3px solid white;
+    margin-bottom: 1rem;
+    
+}
+
+.service-boxes p {
+    visibility: hidden;
+    height: 0;
+    width: auto;
+    opacity: 0;
+    transform: scale(1%);        
+    transition: visbility 250ms ease-in-out,
+    scale 500ms ease-in-out,
+    opacity 350ms ease-in-out,
+    height 500ms ease-out;
+}
+
+.service-boxes:hover > p {
+    visibility: visible;
+    height: 10rem;
+    width: auto;
+    opacity: 1;
+    transform: scale(90%);    
 }
 
 #portfolio-section {
     width: 100%;
     height: 50vh;
-    background-color: darkgreen;
+    background-color: rgb(36, 53, 71);
+}
+
+#image-main {
+    display: grid;
+    width: 100%;
+    height: 50vh;
+    opacity: 65%;           
 }
 
 .about-section {
@@ -137,14 +181,8 @@ a:hover {
     background-color: teal;
 }
 
-#image-main {
-    display: grid;
-    width: 100%;
-    height: 50vh;       
-}
-
 #card-container {
-    background-color:yellowgreen;
+    background-color: rgb(36, 53, 71);
     justify-content: center;
     align-items: center;
     margin: 0px;
@@ -160,7 +198,7 @@ a:hover {
     margin: 1.5rem;
     padding: 1rem;
     border-radius: 1rem;
-    box-shadow: 0px 3px 5px rgba(46, 46, 46, 0.5);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,6 +207,7 @@ a:hover {
     background-blend-mode: multiply;
     color: white;    
     text-shadow: 0px 3px 5px rgba(46, 46, 46, 0.5);
+    cursor: pointer;
 }
 
 .card:hover {
@@ -241,7 +280,7 @@ a:hover {
 #contact-section {
     width: 100%;
     height: 50vh;
-    background-color:grey;
+    background-color: rgb(20, 32, 46);
     display: flex;    
     justify-content: center;
     align-items: center;

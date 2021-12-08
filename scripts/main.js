@@ -104,7 +104,7 @@ const serviceCardElements = services.
         `<div class="service-boxes" 
         style="background:url(./media/img/darkgrey.png),url(./media/img/${services.image})">
         <h2>${services.topic}</h2>
-        <p>${services.summary}</p>
+        <p class="service-p">${services.summary}</p>
         </div>`
     ).join("");
 
