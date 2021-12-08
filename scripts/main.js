@@ -63,6 +63,7 @@ const images = [
     }
 ]
 
+//burger meny
 const navMenu = () => {
     let menu = document.querySelector("#menu-links");
     let burgerIcon = document.querySelector("#iconstyle");    
@@ -85,24 +86,28 @@ map(
 .join("");
 
 document.querySelector('#card-container').innerHTML = cardElements;
-// exd
+
 const openModal = (index) => {
-    document.querySelector("#modal-content").innerHTML = 
-    `<div class="modal-header">
-        <span onclick="closeModal()">X</span>
+    document.querySelector("#card-modal-content").innerHTML = 
+    `<div class="card-modal-header">
+        <a onclick="closeModal()">x (close)</a>
     </div>
-    <div class="modal-body">
-        <h3>${cards[index].name}</h3>
-        <p>${cards[index].content}</p>
+    <div class="card-modal-body">
+        <img src="./media/img/${staff[index].image}">
+        <h3>${staff[index].name}</h3>
+        <h4>${staff[index].title}</h4>
+        <p>${staff[index].info}</p>
     </div>`
     ;
-    document.querySelector("#modal-wrapper").style.display = "flex";
+    document.querySelector("#card-modal-wrapper").style.display = "flex";
 }
 
+const closeModal = () => {
+    document.querySelector("#card-modal-wrapper").style.display = "none";
+}
+
+// Visar en slideshow på sidan som ska leda till en Lightbox med thumbs
 let counter = 0;
-
-
-
 function showSlides(){
     let imageMain = document.querySelector("#image-main");
     setTimeout(() => {
@@ -114,17 +119,8 @@ function showSlides(){
     }
 };
 
-/*function showSlides(){
-    setInterval(() =>
-        {
-           for(let img in images) {
-            console.log(images[img].filename);
-            setTimeout(() => {
-                document.querySelector("#image-main").setAttribute("src",`./media/img/${images[img].filename}`)
-            }, 2000);
-           }},14000);
-};*/
 // Ladda ikon dyker upp och rensar form fälten efter 3 sek
+// Kollar med en REGEX att epost har rätt format, och om allt stämmer, körs fake laddningen
 const onSubmit = () => {
     const formcheck = document.querySelectorAll(".formcheck");
         document.querySelector("#loading-container").style.display = "flex"
@@ -141,17 +137,20 @@ const closeLoadingBox = () => {
 }
 
 const validateEmail = () => {
-    const test = document.forms["contact-form-name"]['input1'].value; 
-    if (test === "") {
-        alert('Du måste fylla i din e-postadress!');
+    const test = document.forms["contact-form-name"]['input1'].value;    
+    if (!validateEmailPattern(test)) {
+        alert('Du har inte fyllt i en giltig epost-adress!');
         return false;
     }else{
-        console.log("här blev det sant");
+        console.log("korrekt ifylld epost-adress");
         return true;
     }
 }
 
-
+const validateEmailPattern = (emailVariabel) => {      
+    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(emailVariabel); 
+}
 
 window.onload = (event) => {
     console.log('page is fully loaded');

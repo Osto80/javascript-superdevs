@@ -152,6 +152,37 @@ a:hover {
     border-radius: 1rem;
 }
 
+#card-modal-wrapper {
+    z-index: 50;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-modal-header {
+    display: flex;
+    width: 100%;
+    background-color: royalblue;
+    justify-content: flex-end;
+
+}
+
+#card-modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    height: 45rem;
+    background-color: rosybrown;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
 #contact-section {
     width: 100%;
     height: 50vh;

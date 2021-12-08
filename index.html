@@ -59,8 +59,11 @@
             </div>
         </div>
         <div id="about-section">
-            <div id="card-container">
+            <div id="card-container">                
                 <!--- add cards via JavaScript-->
+            </div>
+            <div id="card-modal-wrapper">
+                <div id="card-modal-content"></div>
             </div>
         </div>
     </div>
@@ -71,7 +74,7 @@
             </div>
             <div id="contact-form-container">
                 <form id="contact-form" name="contact-form-name" action="javascript: onSubmit();" onsubmit="return validateEmail()"> 
-                   <input type="email"  placeholder="Din e-post tack" name="input1" class="formcheck">   
+                   <input type="email"  placeholder="Din e-post tack" name="input1" class="formcheck" required>   
                     <input type="text" placeholder="Ditt namn" name="input2" class="formcheck" required>
                     <textarea name="input3" class="formcheck" cols="30" rows="10" placeholder="Ditt meddelande tack" required></textarea>
                     <input type="submit" value="submit">
