@@ -115,7 +115,10 @@ document.querySelector('#service-container').innerHTML = serviceCardElements;
 const cardElements = staff.
 map(
     (staff, index) => 
-    `<div class="card" style="background-image:url(./media/img/darkgrey.png),url(./media/img/staff/${staff.image})" onclick="openCardModal(${index})"><h2>${staff.name}</h2></div>`
+    `<div class="card" 
+    style="background-image:url(./media/img/darkgrey.png),url(./media/img/staff/${staff.image})" 
+    onclick="openCardModal(${index})">
+    <h2>${staff.name}</h2></div>`
     )
 .join("");
 
