@@ -2,20 +2,20 @@
 let staff = [
     {
     name: "Da-Neil Svensson",
-    title: "Worst at videogames but played most fighting games",
-    info: "likes to not have time to sleep",
+    title: "Worst at videogames",
+    info: "He may be worst at videogames, but he has an extensive knowledge of fighting games. Likes to not have time to sleep",
     image: "daneil.png"
     },
     {
-    name: "Göran Persson",
-    title: "Head of Banking",
-    info: "I don't like U-countries, like Sweden for example",
+    name: "Isak Lejon",
+    title: "Jumping Maniac",
+    info: "'I don't like U-countries, like Sweden for example, but I like jumping. Like really much!'",
     image: "isak.png"
     },
     {
-    name: "Tord Yvel",
-    title: "Head of Poetry",
-    info: "I like stuff like farts and poop",
+    name: "Arvid Borensved",
+    title: "the IT Alien",
+    info: "Like winning? Then IT Alien is your guy, keeping you in the winners lane all the time!",
     image: "italien.png"
     }, 
     {
@@ -81,11 +81,13 @@ const navMenu = () => {
 const cardElements = staff.
 map(
     (staff, index) => 
-    `<div class="card" onclick="openModal(${index})"><h2>${staff.name}</h2></div>`
+    `<div class="card" style="background-image:url(./media/img/staff/${staff.image})" onclick="openModal(${index})"><h2>${staff.name}</h2></div>`
     )
 .join("");
 
 document.querySelector('#card-container').innerHTML = cardElements;
+
+
 
 const openModal = (index) => {
     document.querySelector("#card-modal-content").innerHTML = 
