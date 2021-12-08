@@ -63,6 +63,29 @@ const images = [
     }
 ]
 
+let services = [
+    {
+        topic : "Hacking",
+        summary : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus facere sapiente fuga, animi quibusdam explicabo velit totam accusantium tenetur, quo sint rem modi praesentium id soluta dolore quas, provident laudantium?",
+        image : "service-01.jpg"
+    },
+    {
+        topic : "Winning",
+        summary : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus facere sapiente fuga, animi quibusdam explicabo velit totam accusantium tenetur, quo sint rem modi praesentium id soluta dolore quas, provident laudantium?",
+        image : "service-04.jpg"
+    },
+    {
+        topic : "Racing",
+        summary : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus facere sapiente fuga, animi quibusdam explicabo velit totam accusantium tenetur, quo sint rem modi praesentium id soluta dolore quas, provident laudantium?",
+        image : "service-02.jpg"
+    },
+    {
+        topic : "Jumping",
+        summary : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus facere sapiente fuga, animi quibusdam explicabo velit totam accusantium tenetur, quo sint rem modi praesentium id soluta dolore quas, provident laudantium?",
+        image : "service-03.jpg"
+    }
+]
+
 //burger meny
 const navMenu = () => {
     let menu = document.querySelector("#menu-links");
@@ -76,12 +99,23 @@ const navMenu = () => {
     }
 }
 
+const serviceCardElements = services.
+    map((services) =>
+        `<div class="service-boxes" 
+        style="background:url(./media/img/darkgrey.png),url(./media/img/${services.image})">
+        <h2>${services.topic}</h2>
+        <p>${services.summary}</p>
+        </div>`
+    ).join("");
+
+document.querySelector('#service-container').innerHTML = serviceCardElements;
+
 // Loopa igenom staff och befolka och lägg in staff kort.
 // TODO refaktor detta
 const cardElements = staff.
 map(
     (staff, index) => 
-    `<div class="card" style="background-image:url(./media/img/staff/${staff.image})" onclick="openCardModal(${index})"><h2>${staff.name}</h2></div>`
+    `<div class="card" style="background-image:url(./media/img/darkgrey.png),url(./media/img/staff/${staff.image})" onclick="openCardModal(${index})"><h2>${staff.name}</h2></div>`
     )
 .join("");
 
