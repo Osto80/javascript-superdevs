@@ -4,25 +4,25 @@ let staff = [
     name: "Da-Neil Svensson",
     title: "Worst at videogames but played most fighting games",
     info: "likes to not have time to sleep",
-    image: "img07.jpg.PNG"
+    image: "daneil.png"
     },
     {
     name: "Göran Persson",
     title: "Head of Banking",
     info: "I don't like U-countries, like Sweden for example",
-    image: "GP.jpg"
+    image: "isak.png"
     },
     {
     name: "Tord Yvel",
     title: "Head of Poetry",
     info: "I like stuff like farts and poop",
-    image: "Tord.jpg"
+    image: "italien.png"
     }, 
     {
         name:"Mao Zedong",
         title:"King of kings",
         info:"i like to kill my people",
-        image:"swain.jpg"
+        image:"keving.png"
     }
 ]
 const images = [
@@ -93,7 +93,7 @@ const openModal = (index) => {
         <a onclick="closeModal()">x (close)</a>
     </div>
     <div class="card-modal-body">
-        <img src="./media/img/${staff[index].image}">
+        <img src="./media/img/staff/${staff[index].image}">
         <h3>${staff[index].name}</h3>
         <h4>${staff[index].title}</h4>
         <p>${staff[index].info}</p>
