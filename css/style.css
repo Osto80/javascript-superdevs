@@ -173,8 +173,17 @@ a:hover {
 
 }
 
-#card-modal-content {
+.card-modal-body {
+    background-color: seashell;
+    border-radius: 1rem;
     display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: justify;   
+}
+
+#card-modal-content {
+    display: flex;    
     flex-direction: column;
     width: 30rem;
     height: 45rem;
