@@ -22,7 +22,7 @@ let staff = [
         name:"Mao Zedong",
         title:"King of kings",
         info:"i like to kill my people",
-        image:"keving.png"
+        image:"kevin.png"
     }
 ]
 const images = [
