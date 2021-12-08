@@ -122,12 +122,13 @@ function showSlides(){
 // Ladda ikon dyker upp och rensar form fälten efter 3 sek
 // Kollar med en REGEX att epost har rätt format, och om allt stämmer, körs fake laddningen
 const onSubmit = () => {
+    const name = document.forms["contact-form-name"]['input2'].value;
     // Unused --- const formcheck = document.querySelectorAll(".formcheck");
         document.querySelector("#loading-container").style.display = "flex"
     setTimeout(() => {
         document.querySelector("#contact-form").reset();
         document.querySelector("#loading-container")
-        .innerHTML = '<h2>TACK FÖR DITT BIDRAG!</h2><br><a href="javascript:closeLoadingBox();">[Stäng denna rutan]</a>'
+        .innerHTML = `<h2>Tack ${name}, för ditt bidrag!</h2><br><a href="javascript:closeLoadingBox();">[Stäng denna rutan]</a>`
     } , 3000 );
 }
 
