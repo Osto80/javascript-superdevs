@@ -94,81 +94,44 @@ const navMenu = () => {
     }
 }
 
-// Visar en slideshow på sidan som ska leda till en Lightbox med thumbs
+// Shows pictures with thumbnails
+const openLightbox = (filename) => {
+  let imageMain = document.querySelector("#main-img");
+  imageMain.classList.add("pause");
+  setMainImage(filename);
+  document.querySelector("#lightbox-wrapper").style.display = "flex";
+};
 
-
-/*function showSlides(){
-    let imageMain = document.querySelector("#image-main");
+let counter = 1;
+function imageElems() {
+  let imageMain = document.querySelector("#main-img");
+  if (!imageMain.classList.contains("pause")) {
     setTimeout(() => {
-        imageMain.setAttribute("src", `./media/img/resize/${images[counter].filename}`);
-        counter++;
+      imageMain.setAttribute("src", `./media/img/resize/${images[counter].filename}`);
+      imageMain.setAttribute("alt", `${images[counter].alt}`);
+      imageMain.setAttribute("onclick", `openLightbox('${images[counter].filename}')`);
+      counter++;
     }, 3000);
     if (counter === images.length) {
       counter = 0;
     }
-};*/
-
-/*let imageElems = `<img alt="${images[0].alt}" src="./media/img/resize/${images[0].filename}" onclick="openLightbox('${images[0].filename}')">`;*/
-
-// Shows pictures with thumbnails
-/*const openLightbox = (filename) => {
-  console.log(filename);
-  setMainImage(filename);
-  document.querySelector("#lightbox-wrapper").style.display = "flex";
-}; */
-
-let counter = 0;
-
-function imageElems() {
-  setTimeout(() => {
-    let imageMain = document.querySelector("#image-main");
-    imageMain.setAttribute("src", `./media/img/resize/${images[counter].filename}`);
-    imageMain.setAttribute("alt", `${images[counter].alt}`);
-    imageMain.setAttribute("onclick", `openLightbox('${images[counter].filename}')`);
-    counter++;
-  }, 3000);
-  if (counter === images.length) {
-    counter = 0;
   }
 }
 
-function openLightbox() {
-    document.getElementById("lightbox-wrapper").style.display = "flex";
-}
-
-/*const imageElems = () => {
-  setTimeout(() => {
-    `<img alt="${images[counter].alt}" src="./media/img/resize/${images[counter].filename}" onclick="openLightbox('${images[counter].filename}')">`;
-      counter++;
-  }, 3000);
-  if (counter === images.length) {
-    counter = 0;
-  }
-}*/
-
-/*const imageElems = images
-  .map(
-      (img) =>
-      `<img alt="${img.alt}" src="./media/img/resize/${img.filename}" onclick="openLightbox('${img.filename}')">`
-  ).join("");*/
-
-const imageThumbs = images
-  .map(
-      (img) =>
-        `<img alt="${img.alt}" src="./media/img/resize/${img.filename}" onclick="setMainImage('${img.filename}') class="thumbnail">`
-  ).join("");
+const imageThumbs = images.map(img => `<img alt="${img.alt}" src="./media/img/resize/${img.filename}" onclick="setMainImage('${img.filename}')" class="thumbnail">`);
 
 
 const setMainImage = (filename) => {
   document
     .querySelector("#main-image")
     .setAttribute("src", `./media/img/resize/${filename}`);
+  setActiveThumbnail();
 }
 
 // Sets the active thumbnail with border
 const setActiveThumbnail = () => {
   const thumbs = document.querySelectorAll(".thumbnail");
-  thumbs.forEach((thumb) => {
+  thumbs.forEach(thumb => {
     if(thumb.src === document.querySelector("#main-image").src) {
       thumb.style.border = "2px solid orange";
     } else {
@@ -180,38 +143,45 @@ const setActiveThumbnail = () => {
 // Switches to previous image
 const prevImg = () => {
   const thumbs = document.querySelectorAll(".thumbnail");
-  for (let i = 0; i < thumbs.length; i++) {
+  for(let i = 0; i < thumbs.length; i++) {
     if(thumbs[i].src === document.querySelector("#main-image").src && i !== 0) {
       document
         .querySelector("#main-image")
         .setAttribute("src", thumbs[i -= 1].src);
-        setActiveThumbnail();
-    } else if(thumbs[i].src === document.querySelector("#main-image").src && i === 0) {
+      setActiveThumbnail();
+    } else if(thumbs[i].src === document.querySelector("#main-image").src && i == 0) {
       document
         .querySelector("#main-image")
-        .setAttribute("src", thumbs[i += thumbs.length - 1].src)
-        setActiveThumbnail();
+        .setAttribute("src", thumbs[i += thumbs.length - 1].src);
+      setActiveThumbnail();
     }
   }
-};
+}
 
 // Switches to next image
 const nextImg = () => {
   const thumbs = document.querySelectorAll(".thumbnail");
-  for (let i = 0; i < thumbs.length; i++) {
-    if(thumbs[i].src === document.querySelector("#main-image").src && i != thumbs.length - 1) {
+  for(let i = 0; i < thumbs.length; i++) {
+    if(thumbs[i].src === document.querySelector("#main-image").src && i !== thumbs.length - 1) {
       document
         .querySelector("#main-image")
         .setAttribute("src", thumbs[i += 1].src);
-        setActiveThumbnail();
-    } else if(thumbs[i].src === document.querySelector("#main-image").src && i === thumbs.length - 1) {
+      setActiveThumbnail();
+    } else if(thumbs[i].src === document.querySelector("#main-image").src && i == thumbs.length - 1) {
       document
         .querySelector("#main-image")
-        .setAttribute("src", thumbs[0].src);
-        setActiveThumbnail();
+        .setAttribute("src", thumbs[i - i].src);
+      setActiveThumbnail();
     }
   }
-};
+}
+
+const closeLightBox = () => {
+  let imageMain = document.querySelector("#main-img");
+  imageMain.classList.remove("pause");
+  document.querySelector("#lightbox-wrapper").style.display = "none";
+}
+
 
 // Ladda ikon dyker upp och rensar form fälten efter 3 sek
 // Kollar med en REGEX att epost har rätt format, och om allt stämmer, körs fake laddningen
@@ -298,6 +268,8 @@ window.onload = (event) => {
 };
 
 window.addEventListener("load", () => {
-  /*document.querySelector("#image-grid").innerHTML = imageElems;*/
+  document.querySelector("#main-img").setAttribute("src", `./media/img/resize/${images[0].filename}`);
+  document.querySelector("#main-img").setAttribute("alt", `${images[0].alt}`);
+  document.querySelector("#main-img").setAttribute("onclick", `openLightbox('${images[0].filename}')`);
   document.querySelector("#thumbnails-wrapper").innerHTML = imageThumbs;
 });
