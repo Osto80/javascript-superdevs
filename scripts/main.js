@@ -17,7 +17,7 @@ let staff = [
     title: "the IT Alien",
     info: "Like winning? Then IT Alien is your guy, keeping you in the winners lane all the time!",
     image: "italien.png"
-    }, 
+    },
     {
         name:"Mao Zedong",
         title:"King of kings",
@@ -29,32 +29,32 @@ const images = [
     {
         filename:"img01-rz.jpg" ,
         alt:"Todo image alt text",
-        description:"TODO Desctiption" 
+        description:"TODO Desctiption"
     },
     {
         filename:"img02-rz.jpg" ,
         alt:"Todo image alt text",
-        description:"TODO Desctiption" 
+        description:"TODO Desctiption"
     },
     {
         filename:"img03-rz.jpg" ,
         alt:"Todo image alt text",
-        description:"TODO Desctiption" 
+        description:"TODO Desctiption"
     },
     {
         filename:"img04-rz.jpg" ,
         alt:"Todo image alt text",
-        description:"TODO Desctiption" 
+        description:"TODO Desctiption"
     },
     {
         filename:"img05-rz.jpg" ,
         alt:"Todo image alt text",
-        description:"TODO Desctiption" 
+        description:"TODO Desctiption"
     },
     {
         filename:"img06-rz.jpg" ,
         alt:"Todo image alt text",
-        description:"TODO Desctiption" 
+        description:"TODO Desctiption"
     }
 ]
 
@@ -84,19 +84,19 @@ let services = [
 //burger meny
 const navMenu = () => {
     let menu = document.querySelector("#menu-links");
-    let burgerIcon = document.querySelector("#iconstyle");    
+    let burgerIcon = document.querySelector("#iconstyle");
     if (menu.style.display === "grid") {
         burgerIcon.setAttribute("class", "fa fa-bars")
         menu.style.display = "none";
     } else {
         burgerIcon.setAttribute("class", "fa fa-times")
-        menu.style.display = "grid";
+        menu.style.display = "grid"; a
     }
 }
 
 const serviceCardElements = services.
     map((services) =>
-        `<div class="service-boxes" 
+        `<div class="service-boxes"
         style="background:url(./media/img/darkgrey.png),url(./media/img/${services.image})">
         <h2>${services.topic}</h2>
         <p class="service-p">${services.summary}</p>
@@ -109,9 +109,9 @@ document.querySelector('#service-container').innerHTML = serviceCardElements;
 // TODO refaktor detta
 const cardElements = staff.
 map(
-    (staff, index) => 
-    `<div class="card" 
-    style="background-image:url(./media/img/darkgrey.png),url(./media/img/staff/${staff.image})" 
+    (staff, index) =>
+    `<div class="card"
+    style="background-image:url(./media/img/darkgrey.png),url(./media/img/staff/${staff.image})"
     onclick="openCardModal(${index})">
     <h2>${staff.name}</h2></div>`
     )
@@ -120,7 +120,7 @@ map(
 document.querySelector('#card-container').innerHTML = cardElements;
 
 const openCardModal = (index) => {
-    document.querySelector("#card-modal-content").innerHTML = 
+    document.querySelector("#card-modal-content").innerHTML =
     `<div class="card-modal-header">
         <a onclick="closeModal()">x (close)</a>
     </div>
@@ -172,7 +172,7 @@ const closeLoadingBox = () => {
 
 const validateEmail = () => {
     // alternativ ---- const test2 = document.querySelector('contact-form').value;
-    const test = document.forms["contact-form-name"]['input1'].value;    
+    const test = document.forms["contact-form-name"]['input1'].value;
     if (!validateEmailPattern(test)) {
         alert('Du har inte fyllt i en giltig epost-adress!');
         return false;
@@ -182,13 +182,12 @@ const validateEmail = () => {
     }
 }
 
-const validateEmailPattern = (emailVariabel) => {      
+const validateEmailPattern = (emailVariabel) => {
     let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailPattern.test(emailVariabel); 
+    return emailPattern.test(emailVariabel);
 }
 
 window.onload = (event) => {
     console.log('page is fully loaded');
     setInterval(showSlides, 2000);
 };
-    
