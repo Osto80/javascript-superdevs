@@ -97,7 +97,7 @@ const navMenu = () => {
 // Visar en slideshow på sidan som ska leda till en Lightbox med thumbs
 
 
-function showSlides(){
+/*function showSlides(){
     let imageMain = document.querySelector("#image-main");
     setTimeout(() => {
         imageMain.setAttribute("src", `./media/img/resize/${images[counter].filename}`);
@@ -106,7 +106,9 @@ function showSlides(){
     if (counter === images.length) {
       counter = 0;
     }
-};
+};*/
+
+/*let imageElems = `<img alt="${images[0].alt}" src="./media/img/resize/${images[0].filename}" onclick="openLightbox('${images[0].filename}')">`;*/
 
 // Shows pictures with thumbnails
 const openLightbox = (filename) => {
@@ -115,9 +117,20 @@ const openLightbox = (filename) => {
   document.querySelector("#lightbox-wrapper").style.display = "flex";
 };
 
-/*const imageElems = `<img alt="${images[0].alt}" src="./media/img/resize/${images[0].filename}" onclick="openLightbox('${images[0].filename}')">`;*/
-
 let counter = 0;
+
+function imageElems() {
+  setTimeout(() => {
+    let imageMain = document.querySelector("#image-main");
+    imageMain.setAttribute("src", `./media/img/resize/${images[counter].filename}`);
+    imageMain.setAttribute("alt", `${images[counter].alt}`);
+    imageMain.setAttribute("onclick", `openLightbox('${images[counter].filename}')`);
+    counter++;
+  }, 3000);
+  if (counter === images.length) {
+    counter = 0;
+  }
+}
 
 /*const imageElems = () => {
   setTimeout(() => {
@@ -277,11 +290,10 @@ const validateEmailPattern = (emailVariabel) => {
 
 window.onload = (event) => {
     console.log('page is fully loaded');
-    setInterval(showSlides, 2000);
+    setInterval(imageElems, 2000);
 };
 
-/*window.addEventListener("load", () => {
-  document.querySelector("#image-grid").innerHTML = imageElems;
+window.addEventListener("load", () => {
+  /*document.querySelector("#image-grid").innerHTML = imageElems;*/
   document.querySelector("#thumbnails-wrapper").innerHTML = imageThumbs;
 });
-*/
