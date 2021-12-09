@@ -90,7 +90,7 @@ const navMenu = () => {
         menu.style.display = "none";
     } else {
         burgerIcon.setAttribute("class", "fa fa-times")
-        menu.style.display = "grid"; a
+        menu.style.display = "grid";
     }
 }
 
