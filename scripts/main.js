@@ -27,39 +27,34 @@ let staff = [
 ]
 const images = [
     {
-        filename:"img01.jpg" ,
+        filename:"img01-rz.jpg" ,
         alt:"Todo image alt text",
         description:"TODO Desctiption" 
     },
     {
-        filename:"img02.jpg" ,
+        filename:"img02-rz.jpg" ,
         alt:"Todo image alt text",
         description:"TODO Desctiption" 
     },
     {
-        filename:"img03.jpg" ,
+        filename:"img03-rz.jpg" ,
         alt:"Todo image alt text",
         description:"TODO Desctiption" 
     },
     {
-        filename:"img04.jpg" ,
+        filename:"img04-rz.jpg" ,
         alt:"Todo image alt text",
         description:"TODO Desctiption" 
     },
     {
-        filename:"img05.jpg" ,
+        filename:"img05-rz.jpg" ,
         alt:"Todo image alt text",
         description:"TODO Desctiption" 
     },
     {
-        filename:"img06.jpg" ,
+        filename:"img06-rz.jpg" ,
         alt:"Todo image alt text",
         description:"TODO Desctiption" 
-    },
-    {
-        filename:"img07.jpg.PNG" ,
-        alt:"BILD PÅ DA-NEIL",
-        description:"Supreme old man DA-NEIL" 
     }
 ]
 
@@ -144,11 +139,12 @@ const closeModal = () => {
 }
 
 // Visar en slideshow på sidan som ska leda till en Lightbox med thumbs
+
 let counter = 0;
 function showSlides(){
     let imageMain = document.querySelector("#image-main");
     setTimeout(() => {
-        imageMain.setAttribute("src", `./media/img/${images[counter].filename}`);
+        imageMain.setAttribute("src", `./media/img/resize/${images[counter].filename}`);
         counter++;
     }, 3000);
     if (counter === images.length) {
