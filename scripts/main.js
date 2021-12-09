@@ -94,53 +94,9 @@ const navMenu = () => {
     }
 }
 
-const serviceCardElements = services.
-    map((services) =>
-        `<div class="service-boxes"
-        style="background:url(./media/img/darkgrey.png),url(./media/img/${services.image})">
-        <h2>${services.topic}</h2>
-        <p class="service-p">${services.summary}</p>
-        </div>`
-    ).join("");
-
-document.querySelector('#service-container').innerHTML = serviceCardElements;
-
-// Loopa igenom staff och befolka och lägg in staff kort.
-// TODO refaktor detta
-const cardElements = staff.
-map(
-    (staff, index) =>
-    `<div class="card"
-    style="background-image:url(./media/img/darkgrey.png),url(./media/img/staff/${staff.image})"
-    onclick="openCardModal(${index})">
-    <h2>${staff.name}</h2></div>`
-    )
-.join("");
-
-document.querySelector('#card-container').innerHTML = cardElements;
-
-const openCardModal = (index) => {
-    document.querySelector("#card-modal-content").innerHTML =
-    `<div class="card-modal-header">
-        <a onclick="closeModal()">x (close)</a>
-    </div>
-    <div class="card-modal-body">
-        <img src="./media/img/staff/${staff[index].image}">
-        <h3>${staff[index].name}</h3>
-        <h4>${staff[index].title}</h4>
-        <p>${staff[index].info}</p>
-    </div>`
-    ;
-    document.querySelector("#card-modal-wrapper").style.display = "flex";
-}
-
-const closeModal = () => {
-    document.querySelector("#card-modal-wrapper").style.display = "none";
-}
-
 // Visar en slideshow på sidan som ska leda till en Lightbox med thumbs
 
-let counter = 0;
+/*let counter = 0;
 function showSlides(){
     let imageMain = document.querySelector("#image-main");
     setTimeout(() => {
@@ -150,7 +106,7 @@ function showSlides(){
     if (counter === images.length) {
       counter = 0;
     }
-};
+};*/
 
 // Shows pictures with thumbnails
 const openLightbox = (filename) => {
@@ -243,6 +199,50 @@ const closeLoadingBox = () => {
     document.querySelector("#loading-container").innerHTML = '<div class="loading"></div>'
 }
 
+const serviceCardElements = services.
+    map((services) =>
+        `<div class="service-boxes"
+        style="background:url(./media/img/darkgrey.png),url(./media/img/${services.image})">
+        <h2>${services.topic}</h2>
+        <p class="service-p">${services.summary}</p>
+        </div>`
+    ).join("");
+
+document.querySelector('#service-container').innerHTML = serviceCardElements;
+
+// Loopa igenom staff och befolka och lägg in staff kort.
+// TODO refaktor detta
+const cardElements = staff.
+map(
+    (staff, index) =>
+    `<div class="card"
+    style="background-image:url(./media/img/darkgrey.png),url(./media/img/staff/${staff.image})"
+    onclick="openCardModal(${index})">
+    <h2>${staff.name}</h2></div>`
+    )
+.join("");
+
+document.querySelector('#card-container').innerHTML = cardElements;
+
+const openCardModal = (index) => {
+    document.querySelector("#card-modal-content").innerHTML =
+    `<div class="card-modal-header">
+        <a onclick="closeModal()">x (close)</a>
+    </div>
+    <div class="card-modal-body">
+        <img src="./media/img/staff/${staff[index].image}">
+        <h3>${staff[index].name}</h3>
+        <h4>${staff[index].title}</h4>
+        <p>${staff[index].info}</p>
+    </div>`
+    ;
+    document.querySelector("#card-modal-wrapper").style.display = "flex";
+}
+
+const closeModal = () => {
+    document.querySelector("#card-modal-wrapper").style.display = "none";
+}
+
 const validateEmail = () => {
     // alternativ ---- const test2 = document.querySelector('contact-form').value;
     const test = document.forms["contact-form-name"]['input1'].value;
@@ -260,10 +260,10 @@ const validateEmailPattern = (emailVariabel) => {
     return emailPattern.test(emailVariabel);
 }
 
-window.onload = (event) => {
+/*window.onload = (event) => {
     console.log('page is fully loaded');
     setInterval(showSlides, 2000);
-};
+};*/
 
 window.addEventListener("load", () => {
   document.querySelector("#image-grid").innerHTML = imageElems;
