@@ -94,7 +94,7 @@ a:hover {
 
 #hero-container{
     background-image: url("../media/img/covid_office.png");
-    background-blend-mode: soft-light;lighten;
+    background-blend-mode: soft-light;
     background-size: cover;
     background-color: rgb(140, 106, 67);
     background-position: center;
