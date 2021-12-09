@@ -8,11 +8,11 @@
 }
 
 nav {
-    display: flex;    
+    display: flex;
     justify-content: space-between;
     position: fixed;
     top: 0;
-    width: 100%;    
+    width: 100%;
     width: 100%;
     height: 4rem;
     background-color: rgb(20, 32, 46);
@@ -26,7 +26,7 @@ nav h1 {
 
 .nav-button {
     width: 4rem;
-    height: 4rem;    
+    height: 4rem;
     flex-direction: column;
     position: relative;
 }
@@ -50,11 +50,11 @@ button:hover {
     align-items: center;
     width: 4rem;
     height: 4rem;
-    background-color: rgb(36, 53, 71);    
+    background-color: rgb(36, 53, 71);
 }
 
-nav #menu-links {    
-    display: none;   
+nav #menu-links {
+    display: none;
     position: fixed;
     right: 0;
     top: 4rem;
@@ -82,25 +82,26 @@ a:hover {
 
 
 .main-wrapper {
-    width: 100%;    
+    width: 100%;
 }
 
 .hero-section {
     width: 100%;
     height:100vh;
     background-color: crimson;
-   
+
 }
 
-#hero-container{ 
-    background-image: url("/media/img/img-hero.jpg");
+#hero-container{
+    background-image: url("../media/img/covid_office.png");
+    background-blend-mode: soft-light;lighten;
     background-size: cover;
-    background-color: aqua;
+    background-color: rgb(140, 106, 67);
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
    height: 100vh;
-   
+
 }
 
 #hero-message {
@@ -118,30 +119,30 @@ a:hover {
     background-color: green;
 }
 
-#service-container {    
+#service-container {
     background-color: rgb(36, 53, 71);
     justify-content: center;
     align-items: center;
     margin: 0px;
     width: 100%;
     height: 48rem;
-    display: grid;    
-    grid-template-columns: auto auto; 
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
-.service-boxes {          
+.service-boxes {
     border-radius: 1rem;
     height: 20rem;
     width: 20rem;
-    margin: 2rem;    
+    margin: 2rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: justify;    
+    text-align: justify;
     color: white;
-    background-blend-mode:multiply;    
+    background-blend-mode:multiply;
     text-shadow: 0px 5px 12px rgba(0, 0, 0, 1);
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     overflow: hidden;
@@ -150,14 +151,14 @@ a:hover {
 .service-boxes h2 {
     border-bottom: 2px solid orange;
     margin-bottom: 1rem;
-    
+
 }
 
 .service-boxes p {
     visibility: hidden;
     height: 0;
     width: auto;
-    opacity: 0;            
+    opacity: 0;
     transition: visbility 250ms ease-in-out,
     scale 500ms ease-in-out,
     opacity 350ms ease-in-out,
@@ -169,7 +170,7 @@ a:hover {
     height: 10rem;
     width: auto;
     opacity: 1;
-    transform: scale(90%);    
+    transform: scale(90%);
 }
 
 #portfolio-section {
@@ -183,7 +184,7 @@ a:hover {
     width: 100%;
     height: 50vh;
     opacity: 65%;
-    object-fit: cover;           
+    object-fit: cover;
 }
 
 .about-section {
@@ -198,8 +199,8 @@ a:hover {
     align-items: center;
     margin: 0px;
     width: 100%;
-    display: grid;    
-    grid-template-columns: auto auto;    
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 .card {
@@ -213,10 +214,10 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;    
+    text-align: center;
     background-size: cover;
     background-blend-mode: multiply;
-    color: white;    
+    color: white;
     text-shadow: 0px 3px 5px rgba(46, 46, 46, 0.5);
     cursor: pointer;
 }
@@ -255,9 +256,9 @@ a:hover {
     display: flex;
     height: 43rem;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     text-align: justify;
-    padding: 1rem;   
+    padding: 1rem;
 }
 
 .card-modal-body img {
@@ -265,11 +266,11 @@ a:hover {
     margin-bottom: 2rem;
     width: 26rem;
     height: 26rem;
-    border-radius: 0.5rem;  
+    border-radius: 0.5rem;
 }
 
 #card-modal-content {
-    display: flex;    
+    display: flex;
     flex-direction: column;
     width: 30rem;
     height: 45rem;
@@ -281,23 +282,24 @@ a:hover {
 }
 
 #card-modal-content:hover {
-    transform: rotate3d(1, -1, 0.1, 5deg);    
+    transform: rotate3d(1, -1, 0.1, 5deg);
     box-shadow: 5px 10px 8px rgba(46, 46, 46, 0.6);
     transition: 250ms ease-in-out;
 }
 
 #contact-section {
     width: 100%;
-    height: 40vh;
+    height: 35rem;
+    position: relative;
     background-color: rgb(20, 32, 46);
-    display: flex;   
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #contact-form {
     display: flex;
-    flex-direction: column;       
+    flex-direction: column;
 }
 
 #contact-form button {
@@ -311,19 +313,21 @@ a:hover {
     padding: 0.5rem;
     border: none;
     outline: none;
-    border-radius: 4px;        
+    border-radius: 4px;
     width: 30rem;
     margin-bottom: 1rem;
-    background-color: lightblue;        
+    background-color: lightblue;
 }
 
 #contact-form input:focus,
-#contact-form textarea:focus {    
+#contact-form textarea:focus {
     background-color: rgb(216, 235, 241);
 }
 
-#contact-form-container {    
+#contact-form-container {
     width: 30rem;
+    height: 20vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -339,7 +343,7 @@ a:hover {
     width: 30rem;
     height: 20rem;
     background-color: whitesmoke;
-    border-radius: 0.5rem;    
+    border-radius: 0.5rem;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 6px 12px rgba(0,0,0,0.2), 0px 0px 5px rgba(0,0,0,0.3);
@@ -347,26 +351,26 @@ a:hover {
 
 .loading {
     width: 5rem;
-    height: 5rem;    
+    height: 5rem;
     border-radius: 50%;
     border: 16px solid lightgrey;
     border-top: 16px solid salmon;
     animation: load-spin 2s linear infinite;
 }
 
-.social-bar {    
+.social-bar {
     width: 100%;
-    height: 10rem;
+    height: 20vh;
     background-color: rgb(20, 32, 46);
-    display: flex;  
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: lightblue;
 }
 
 .social-bar i {
-    font-size: 30px;    
+    font-size: 30px;
 }
 
 

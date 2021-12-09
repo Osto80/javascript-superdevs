@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperDevs</title>    
+    <title>SuperDevs</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
-        <nav>            
+        <nav>
             <h1>SUPERDevs Unite!</h1>
             <!--Dropdown menu-->
             <div class="nav-button">
@@ -23,10 +23,10 @@
                     <a href="#service-section">SERVICES</a>
                     <a href="#portfolio-section">PORTFOLIO</a>
                     <a href="#about-section">ABOUT</a>
-                    <a href="#contact-section">CONTACT</a>                
+                    <a href="#contact-section">CONTACT</a>
                 </div>
-            </div> 
-        </nav>  
+            </div>
+        </nav>
     </header>
     <div class="main-wrapper">
         <div class="hero-section">
@@ -37,16 +37,28 @@
         <div id="service-section">
             <div id="service-container">
                 <!--Services added via JavaScript-->
-            </div>            
-        </div>       
+            </div>
+        </div>
         <div id="portfolio-section">
+          <div id="image-grid"></div>
+              <div id="lightbox-wrapper">
+                <div class="close-wrapper">
+                    <span onclick="closeLightBox()">X</span>
+                </div>
+                <div id="main-image-wrapper">
+                    <img id="main-image" alt="main image" src="">
+                    <button id="prev-btn" onclick="prevImg()"><</button>
+                    <button id="next-btn" onclick="nextImg()">></button>
+                </div>
+                <div id="thumbnails-wrapper"></div>
+            </div>
             <div id="image-gallery">
-                <img src="./media/img/resize/img05-rz.jpg" id="image-main" onclick="openLightbox()">
+                <img src="./media/img/resize/img05-rz.jpg" id="image-main">
                 <!--Image gallery slideshow med thumbnails-->
             </div>
         </div>
         <div id="about-section">
-            <div id="card-container">                
+            <div id="card-container">
                 <!--- add cards via JavaScript-->
             </div>
             <div id="card-modal-wrapper">
@@ -57,11 +69,11 @@
     <footer>
         <div id="contact-section">
             <div id="contact-adress-container">
-                
+
             </div>
             <div id="contact-form-container">
-                <form id="contact-form" name="contact-form-name" action="javascript: onSubmit();" onsubmit="return validateEmail()"> 
-                   <input type="email"  placeholder="Din e-post (*krävs)" name="input1" class="formcheck" required>   
+                <form id="contact-form" name="contact-form-name" action="javascript: onSubmit();" onsubmit="return validateEmail()">
+                   <input type="email"  placeholder="Din e-post (*krävs)" name="input1" class="formcheck" required>
                     <input type="text" placeholder="Ditt namn (*krävs)" name="input2" class="formcheck" required>
                     <textarea name="input3" class="formcheck" cols="30" rows="10" placeholder="Ditt meddelande tack" required></textarea>
                     <button type="submit" value="Submit">Send Message</button>
@@ -69,15 +81,15 @@
             </div>
             <div id="loading-container">
                 <div class="loading"></div>
-            </div> 
-                       
+            </div>
+
         </div>
         <div class="social-bar">
             <span>
                 <i class="fa fa-github"></i>
                 <i class="fa fa-twitter"></i>
                 <i class="fa fa-instagram"></i>
-            </span>            
+            </span>
             <span><p>SUPERDEVS 2021 - All rights reserved. Please dont pick your nose.</p></span>
         </div>
     </footer>

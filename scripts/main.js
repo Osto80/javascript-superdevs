@@ -152,6 +152,79 @@ function showSlides(){
     }
 };
 
+// Shows pictures with thumbnails
+const openLightbox = (filename) => {
+  setMainImage(filename);
+  document.querySelector("#lightbox-wrapper").style.display = "flex";
+};
+
+const imageElems = images
+  .map(
+      (img) =>
+      `<img alt="${img.alt}" src="./media/img/resize/${img.filename}" onclick="openLightbox('${img.filename}')">`
+  ).join("");
+
+const imageThumbs = images
+  .map(
+      (img) =>
+        `<img alt="${img.alt}" src="./media/img/resize/${img.filename}" onclick="setMainImage('${img.filename}') class="thumbnail">`
+  ).join("");
+
+
+const setMainImage = (filename) => {
+  document
+    .querySelector("#main-image")
+    .setAttribute("src", `./media/img/resize/${filename}`);
+}
+
+// Sets the active thumbnail with border
+const setActiveThumbnail = () => {
+  const thumbs = document.querySelectorAll(".thumbnail");
+  thumbs.forEach((thumb) => {
+    if(thumb.src === document.querySelector("#main-image").src) {
+      thumb.style.border = "2px solid orange";
+    } else {
+      thumb.style.border = "0px";
+    }
+  });
+};
+
+// Switches to previous image
+const prevImg = () => {
+  const thumbs = document.querySelectorAll(".thumbnail");
+  for (let i = 0; i < thumbs.length; i++) {
+    if(thumbs[i].src === document.querySelector("#main-image").src && i !== 0) {
+      document
+        .querySelector("#main-image")
+        .setAttribute("src", thumbs[i -= 1].src);
+        setActiveThumbnail();
+    } else if(thumbs[i].src === document.querySelector("#main-image").src && i === 0) {
+      document
+        .querySelector("#main-image")
+        .setAttribute("src", thumbs[i += thumbs.length - 1].src)
+        setActiveThumbnail();
+    }
+  }
+};
+
+// Switches to next image
+const nextImg = () => {
+  const thumbs = document.querySelectorAll(".thumbnail");
+  for (let i = 0; i < thumbs.length; i++) {
+    if(thumbs[i].src === document.querySelector("#main-image").src && i != thumbs.length - 1) {
+      document
+        .querySelector("#main-image")
+        .setAttribute("src", thumbs[i += 1].src);
+        setActiveThumbnail();
+    } else if(thumbs[i].src === document.querySelector("#main-image").src && i === thumbs.length - 1) {
+      document
+        .querySelector("#main-image")
+        .setAttribute("src", thumbs[0].src);
+        setActiveThumbnail();
+    }
+  }
+};
+
 // Ladda ikon dyker upp och rensar form fälten efter 3 sek
 // Kollar med en REGEX att epost har rätt format, och om allt stämmer, körs fake laddningen
 const onSubmit = () => {
@@ -191,3 +264,8 @@ window.onload = (event) => {
     console.log('page is fully loaded');
     setInterval(showSlides, 2000);
 };
+
+window.addEventListener("load", () => {
+  document.querySelector("#image-grid").innerHTML = imageElems;
+  document.querySelector("#thumbnails-wrapper").innerHTML = imageThumbs;
+});
