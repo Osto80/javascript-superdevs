@@ -31,6 +31,19 @@ nav h1 {
     position: relative;
 }
 
+button {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: rgb(36, 53, 71);
+    color:  rgb(255, 209, 123);
+    justify-self: flex-end;
+}
+
+button:hover {
+    background-color: rgb(138, 161, 187);
+}
+
 #burger {
     display: flex;
     justify-content: center;
@@ -169,7 +182,8 @@ a:hover {
     display: grid;
     width: 100%;
     height: 50vh;
-    opacity: 65%;           
+    opacity: 65%;
+    object-fit: cover;           
 }
 
 .about-section {
@@ -272,30 +286,35 @@ a:hover {
     transition: 250ms ease-in-out;
 }
 
-
-
 #contact-section {
     width: 100%;
-    height: 50vh;
+    height: 40vh;
     background-color: rgb(20, 32, 46);
-    display: flex;    
+    display: flex;   
     justify-content: center;
     align-items: center;
 }
 
+#contact-form {
+    display: flex;
+    flex-direction: column;       
+}
+
+#contact-form button {
+    width: 8rem;
+    align-self: flex-end;
+    font-weight: bold;
+}
+
 #contact-form input,
 #contact-form textarea {
+    padding: 0.5rem;
     border: none;
     outline: none;
     border-radius: 4px;        
     width: 30rem;
     margin-bottom: 1rem;
     background-color: lightblue;        
-}
-
-#contact-form input:hover,
-#contact-form textarea:hover {    
-    background-color: rgb(216, 235, 241);   
 }
 
 #contact-form input:focus,
@@ -334,6 +353,22 @@ a:hover {
     border-top: 16px solid salmon;
     animation: load-spin 2s linear infinite;
 }
+
+.social-bar {    
+    width: 100%;
+    height: 10rem;
+    background-color: rgb(20, 32, 46);
+    display: flex;  
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    color: lightblue;
+}
+
+.social-bar i {
+    font-size: 30px;    
+}
+
 
 @keyframes load-spin {
     0% { transform: rotate(0deg); }
