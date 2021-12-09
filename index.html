@@ -39,22 +39,78 @@
                 <!--Services added via JavaScript-->
             </div>
         </div>
-        <div id="portfolio-section">
-          <div id="image-grid"></div>
-              <div id="lightbox-wrapper">
-                <div class="close-wrapper">
-                    <span onclick="closeLightBox()">X</span>
-                </div>
-                <div id="main-image-wrapper">
-                    <img id="main-image" alt="main image" src="">
-                    <button id="prev-btn" onclick="prevImg()"><</button>
-                    <button id="next-btn" onclick="nextImg()">></button>
-                </div>
-                <div id="thumbnails-wrapper"></div>
-            </div>
+        <div id="portfolio-section">         
             <div id="image-gallery">
-                <img src="./media/img/resize/img05-rz.jpg" id="image-main" onclick=openLightbox()>
-                <img id="image-main">
+                <!--NEW CODE!!-->
+                 <!-- Images used to open the lightbox -->
+<div class="row">
+    <div class="column">
+      <img src="./media/img/resize/img01-rz.jpg" onclick="openModal2();currentSlide2(1)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="./media/img/resize/img02-rz.jpg" onclick="openModal2();currentSlide2(2)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="./media/img/resize/img03-rz.jpg" onclick="openModal2();currentSlide2(3)" class="hover-shadow">
+    </div>
+    <div class="column">
+      <img src="./media/img/resize/img04-rz.jpg" onclick="openModal2();currentSlide2(4)" class="hover-shadow">
+    </div>
+  </div>
+  
+  <!-- The Modal/Lightbox -->
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal2()">&times;</span>
+    <div class="modal-content">
+  
+      <div class="mySlides">
+        <div class="numbertext">1 / 4</div>
+        <img src="./media/img/resize/img01-rz.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">2 / 4</div>
+        <img src="./media/img/resize/img02-rz.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">3 / 4</div>
+        <img src="./media/img/resize/img03-rz.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">4 / 4</div>
+        <img src="./media/img/resize/img04-rz.jpg" style="width:100%">
+      </div>
+  
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides2(1)">&#10095;</a>
+  
+      <!-- Caption text -->
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+  
+      <!-- Thumbnail image controls -->
+      <div class="column">
+        <img class="demo" src="./media/img/resize/img01-rz.jpg" onclick="currentSlide2(1)" alt="Nature">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="./media/img/resize/img02-rz.jpg" onclick="currentSlide2(2)" alt="Snow">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="./media/img/resize/img03-rz.jpg" onclick="currentSlide2(3)" alt="Mountains">
+      </div>
+  
+      <div class="column">
+        <img class="demo" src="./media/img/resize/img04-rz.jpg" onclick="currentSlide2(4)" alt="Lights">
+      </div>
+    </div>
+  </div>
+                <!--END OF NEW CODE!!!-->                               
                 <!--Image gallery slideshow med thumbnails-->
             </div>
         </div>
