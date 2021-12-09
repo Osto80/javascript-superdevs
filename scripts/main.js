@@ -112,6 +112,9 @@ const navMenu = () => {
 
 // Shows pictures with thumbnails
 const openLightbox = (filename) => {
+    let imageMain = document.querySelector("#image-main");
+    console.log(imageMain);
+    imageMain.classList.add("pause");
   setMainImage(filename);
   document.querySelector("#lightbox-wrapper").style.display = "flex";
 };
@@ -119,16 +122,19 @@ const openLightbox = (filename) => {
 let counter = 0;
 
 function imageElems() {
-  setTimeout(() => {
     let imageMain = document.querySelector("#image-main");
-    imageMain.setAttribute("src", `./media/img/resize/${images[counter].filename}`);
-    imageMain.setAttribute("alt", `${images[counter].alt}`);
-    imageMain.setAttribute("onclick", `openLightbox('${images[counter].filename}')`);
-    counter++;
-  }, 3000);
-  if (counter === images.length) {
-    counter = 0;
-  }
+    if (!imageMain.classList.contains("pause")){
+        setTimeout(() => {
+            imageMain.setAttribute("src", `./media/img/resize/${images[counter].filename}`);
+            imageMain.setAttribute("alt", `${images[counter].alt}`);
+            imageMain.setAttribute("onclick", `openLightbox('${images[counter].filename}')`);
+            counter++;
+          }, 3000);
+          if (counter === images.length) {
+            counter = 0;
+          }
+    }
+ 
 }
 
 /*const imageElems = () => {
@@ -158,6 +164,7 @@ const setMainImage = (filename) => {
   document
     .querySelector("#main-image")
     .setAttribute("src", `./media/img/resize/${filename}`);
+    setActiveThumbnail();
 }
 
 // Sets the active thumbnail with border

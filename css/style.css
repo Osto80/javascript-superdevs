@@ -467,9 +467,16 @@ a:hover {
 }
 
 .social-bar i {
-    font-size: 30px;
+    font-size: 50px;
+    margin-bottom: 2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
+.social-bar i:hover{
+   color: rgb(216, 235, 241);
+   font-size: 60px;
+}
 
 @keyframes load-spin {
     0% { transform: rotate(0deg); }
