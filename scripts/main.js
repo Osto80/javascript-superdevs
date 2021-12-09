@@ -96,7 +96,7 @@ const navMenu = () => {
 
 // Visar en slideshow på sidan som ska leda till en Lightbox med thumbs
 
-/*let counter = 0;
+
 function showSlides(){
     let imageMain = document.querySelector("#image-main");
     setTimeout(() => {
@@ -106,19 +106,34 @@ function showSlides(){
     if (counter === images.length) {
       counter = 0;
     }
-};*/
+};
 
 // Shows pictures with thumbnails
 const openLightbox = (filename) => {
+  console.log(filename);
   setMainImage(filename);
   document.querySelector("#lightbox-wrapper").style.display = "flex";
 };
 
-const imageElems = images
+/*const imageElems = `<img alt="${images[0].alt}" src="./media/img/resize/${images[0].filename}" onclick="openLightbox('${images[0].filename}')">`;*/
+
+let counter = 0;
+
+/*const imageElems = () => {
+  setTimeout(() => {
+    `<img alt="${images[counter].alt}" src="./media/img/resize/${images[counter].filename}" onclick="openLightbox('${images[counter].filename}')">`;
+      counter++;
+  }, 3000);
+  if (counter === images.length) {
+    counter = 0;
+  }
+}*/
+
+/*const imageElems = images
   .map(
       (img) =>
       `<img alt="${img.alt}" src="./media/img/resize/${img.filename}" onclick="openLightbox('${img.filename}')">`
-  ).join("");
+  ).join("");*/
 
 const imageThumbs = images
   .map(
@@ -260,12 +275,13 @@ const validateEmailPattern = (emailVariabel) => {
     return emailPattern.test(emailVariabel);
 }
 
-/*window.onload = (event) => {
+window.onload = (event) => {
     console.log('page is fully loaded');
     setInterval(showSlides, 2000);
-};*/
+};
 
-window.addEventListener("load", () => {
+/*window.addEventListener("load", () => {
   document.querySelector("#image-grid").innerHTML = imageElems;
   document.querySelector("#thumbnails-wrapper").innerHTML = imageThumbs;
 });
+*/
