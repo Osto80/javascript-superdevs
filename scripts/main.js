@@ -15,7 +15,7 @@ let staff = [
     {
     name: "Arvid Borensved",
     title: "the IT Alien",
-    info: "Like winning? Then IT Alien is your guy, keeping you in the winners lane all the time!",
+    info: "Like winning? Then IT Alien is your guy, keeping you in the winners lane all the time! t.ex italien",
     image: "italien.png"
     },
     {
