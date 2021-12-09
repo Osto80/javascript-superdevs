@@ -111,11 +111,11 @@ const navMenu = () => {
 /*let imageElems = `<img alt="${images[0].alt}" src="./media/img/resize/${images[0].filename}" onclick="openLightbox('${images[0].filename}')">`;*/
 
 // Shows pictures with thumbnails
-const openLightbox = (filename) => {
+/*const openLightbox = (filename) => {
   console.log(filename);
   setMainImage(filename);
   document.querySelector("#lightbox-wrapper").style.display = "flex";
-};
+}; */
 
 let counter = 0;
 
@@ -130,6 +130,10 @@ function imageElems() {
   if (counter === images.length) {
     counter = 0;
   }
+}
+
+function openLightbox() {
+    document.getElementById("lightbox-wrapper").style.display = "flex";
 }
 
 /*const imageElems = () => {
