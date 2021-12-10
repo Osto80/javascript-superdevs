@@ -25,39 +25,40 @@ let staff = [
         image:"kevin-mccallister.jpg"
     }
 ]
+//Array med bildobjekt
 const images = [
     {
         filename:"img01-rz.jpg" ,
         alt:"Todo image alt text",
-        description:"TODO Desctiption"
+        description:"TODO Desctiption 1"
     },
     {
         filename:"img02-rz.jpg" ,
         alt:"Todo image alt text",
-        description:"TODO Desctiption"
+        description:"TODO Desctiption 2"
     },
     {
         filename:"img03-rz.jpg" ,
         alt:"Todo image alt text",
-        description:"TODO Desctiption"
+        description:"TODO Desctiption 3"
     },
     {
         filename:"img04-rz.jpg" ,
         alt:"Todo image alt text",
-        description:"TODO Desctiption"
+        description:"TODO Desctiption 4"
     },
     {
         filename:"img05-rz.jpg" ,
         alt:"Todo image alt text",
-        description:"TODO Desctiption"
+        description:"TODO Desctiption 5"
     },
     {
         filename:"img06-rz.jpg" ,
         alt:"Todo image alt text",
-        description:"TODO Desctiption"
+        description:"TODO Desctiption 6"
     }
 ]
-
+//array till servicecards
 let services = [
     {
         topic : "Hacking",
@@ -102,6 +103,7 @@ const openLightbox = (filename) => {
   document.querySelector("#lightbox-wrapper").style.display = "flex";
 };
 
+//Slideshow till mainpage
 let counter = 1;
 function imageElems() {
   let imageMain = document.querySelector("#main-img");
@@ -120,7 +122,7 @@ function imageElems() {
 
 const imageThumbs = images.map(img => `<img alt="${img.alt}" src="./media/img/resize/${img.filename}" onclick="setMainImage('${img.filename}')" class="thumbnail">`);
 
-
+//
 const setMainImage = (filename) => {
   document
     .querySelector("#main-image")
@@ -176,6 +178,7 @@ const nextImg = () => {
   }
 }
 
+//stänger ner lightboxen, och resumear slideshow på framsidan.
 const closeLightBox = () => {
   let imageMain = document.querySelector("#main-img");
   imageMain.classList.remove("pause");
@@ -196,11 +199,13 @@ const onSubmit = () => {
     } , 3000 );
 }
 
+//Stänger loading
 const closeLoadingBox = () => {
     document.querySelector("#loading-container").style.display = "none"
     document.querySelector("#loading-container").innerHTML = '<div class="loading"></div>'
 }
 
+//Genererar sevicecardsfunktionen på framsidan.
 const serviceCardElements = services.
     map((services) =>
         `<div class="service-boxes"
@@ -212,8 +217,7 @@ const serviceCardElements = services.
 
 document.querySelector('#service-container').innerHTML = serviceCardElements;
 
-// Loopa igenom staff och befolka och lägg in staff kort.
-// TODO refaktor detta
+// Lägger till staff på framsidan.
 const cardElements = staff.
 map(
     (staff, index) =>
@@ -226,6 +230,7 @@ map(
 
 document.querySelector('#card-container').innerHTML = cardElements;
 
+//När du öppnar ett kort, så skapar denna kortet, och hämtar information från staffarrayen.
 const openCardModal = (index) => {
     document.querySelector("#card-modal-content").innerHTML =
     `<div class="card-modal-header">
@@ -241,12 +246,13 @@ const openCardModal = (index) => {
     document.querySelector("#card-modal-wrapper").style.display = "flex";
 }
 
+//stänger modalen.
 const closeModal = () => {
     document.querySelector("#card-modal-wrapper").style.display = "none";
 }
 
+// Funktion som ger felmeddelande om epost ej stämmer. Se funktion validateEmailPattern.
 const validateEmail = () => {
-    // alternativ ---- const test2 = document.querySelector('contact-form').value;
     const test = document.forms["contact-form-name"]['input1'].value;
     if (!validateEmailPattern(test)) {
         alert('Du har inte fyllt i en giltig epost-adress!');
@@ -257,16 +263,19 @@ const validateEmail = () => {
     }
 }
 
+//funktion för att kontrollera att eposten använder rätt syntax
 const validateEmailPattern = (emailVariabel) => {
     let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return emailPattern.test(emailVariabel);
 }
 
+//Väntar på att hela sidan har laddats, sen körs dessa funktioner.
 window.onload = (event) => {
     console.log('page is fully loaded');
     setInterval(imageElems, 2000);
 };
 
+//
 window.addEventListener("load", () => {
   document.querySelector("#main-img").setAttribute("src", `./media/img/resize/${images[0].filename}`);
   document.querySelector("#main-img").setAttribute("alt", `${images[0].alt}`);

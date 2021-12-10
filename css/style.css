@@ -280,7 +280,7 @@ a.anchor2 {
 #prev-btn, #next-btn {
   position: absolute;
   top: 45%;
-  background-color:;
+  background-color:rgb(138, 161, 187);
   border: 1px solid rgb(36, 53, 71);
   padding: 10px;
   cursor: pointer;
