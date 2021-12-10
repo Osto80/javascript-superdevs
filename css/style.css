@@ -530,7 +530,7 @@ a.anchor2 {
     100% { transform: scaleX(130%); }
 }
 
-@media (min-width: 1100px)and (max-width: 3640px){
+@media (min-width: 850px)and (max-width: 3640px){
     #portfolio-section{
         height: 40rem;
     }
